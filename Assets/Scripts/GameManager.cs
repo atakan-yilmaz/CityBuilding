@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int levelWidth;
     public int levelLength;
+    public Transform tilesHolder;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         GameObject tmpTile = Instantiate(tilePrefab);
 
         tmpTile.transform.position = new Vector3(xPos, 0, zPos);
+        tmpTile.transform.SetParent(tilesHolder);
 
         return tmpTile.GetComponent<TileObject>();
     }
