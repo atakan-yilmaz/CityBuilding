@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class TileManager
 {
     //BUILDING REFERENCE THAT EACH TILE WILL HAVE FOR EACH BUILDING
