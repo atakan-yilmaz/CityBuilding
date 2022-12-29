@@ -20,7 +20,24 @@ public class ResourceManager : MonoBehaviour
     public int maxStandard;
     int standard = 0;
 
+    public static ResourceManager Instance;
 
+    public bool debugBool = false;
+
+    private void Awake()
+    {
+        Instance = this;   
+    }
+
+    private void Update()
+    {
+        if (debugBool)
+        {
+            debugBool = false;
+        }
+    }
+
+    #region Resources
     /// <summary>
     /// ADDS MORE WOOD TO THE INVENTORY
     /// </summary>
@@ -56,4 +73,5 @@ public class ResourceManager : MonoBehaviour
     {
         standard += amount;
     }
+    #endregion
 }

@@ -11,7 +11,7 @@ public class TileManager
 
     public ObstacleType obstacleType;
 
-    bool isStarterTile = false;
+    bool isStarterTile = true;
 
     //THE STUFF THAT THE TILE IS BEING OCCUPIED BY
     public enum ObstacleType
@@ -22,10 +22,14 @@ public class TileManager
     }
 
     #region Methods
+    public void SetOccupied(ObstacleType t)
+    {
+        obstacleType = t;
+    }
+
     public void SetOccupied(ObstacleType t, BuildManager bM)
     {
         obstacleType = t;
-
         buildingRef = bM;
     }
 
