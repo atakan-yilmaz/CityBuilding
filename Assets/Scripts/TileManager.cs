@@ -9,10 +9,9 @@ public class TileManager
     //BUILDING REFERENCE THAT EACH TILE WILL HAVE FOR EACH BUILDING
     public BuildManager buildingRef;
 
-    //TILE IS OCCUPIED BY SOMETHING?
-    public bool occupied;
-
     public ObstacleType obstacleType;
+
+    bool isStarterTile = false;
 
     //THE STUFF THAT THE TILE IS BEING OCCUPIED BY
     public enum ObstacleType
@@ -22,9 +21,9 @@ public class TileManager
         Building
     }
 
+    #region Methods
     public void SetOccupied(ObstacleType t, BuildManager bM)
     {
-        occupied = true;
         obstacleType = t;
 
         buildingRef = bM;
@@ -33,6 +32,29 @@ public class TileManager
     public void CleanTile()
     {
         obstacleType = ObstacleType.None;
-        occupied = false;
     }
+
+    public void StarterTileValue(bool value)
+    {
+        isStarterTile = value;
+    }
+    #endregion
+
+    #region Booleans
+    public bool isOccupied
+    {
+        get
+        {
+            return obstacleType != ObstacleType.None;
+        }
+    }
+
+    public bool CanSpawnObstacle
+    {
+        get
+        {
+            return !isStarterTile;
+        }
+    }
+    #endregion
 }
