@@ -14,17 +14,27 @@ public class ObstacleObject : MonoBehaviour
     private void OnMouseDown()
     {
         //OnClick Event
+        bool usedResource = false;
 
         //CALL DIRECTLY THE METHOD THAT ADDS THE RESOURCE
         switch (obstacleType)
         {
             case ObstacleType.Stone:
-                ResourceManager.Instance.AddStone(ResourceAmount);
+
+                usedResource = ResourceManager.Instance.AddStone(ResourceAmount);
+
                 break;
             case ObstacleType.Wood:
-                ResourceManager.Instance.AddWood(ResourceAmount);
+
+                usedResource = ResourceManager.Instance.AddWood(ResourceAmount);
+
                 break;
         }
+
+        if (usedResource)
+            Destroy(gameObject);
+        else
+            Debug.Log("Could not destroy. Because inventory is full");
     }
 
     public enum ObstacleType

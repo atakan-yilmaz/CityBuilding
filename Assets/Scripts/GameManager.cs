@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject woodPrefab;
     public GameObject stonePrefab;
+    public Transform resourcesHolder;
 
     [Range(0, 1)]
     public float obstacleChance = 0.3f;
@@ -107,6 +108,8 @@ public class GameManager : MonoBehaviour
             spawnedObstacle = Instantiate(stonePrefab);
         }
 
+        //SETS THE POSITION AND THE PARENT OF THE SPAWNED RESOURCE
         spawnedObstacle.transform.position = new Vector3(xPos, tileEndHeight, zPos);
+        spawnedObstacle.transform.SetParent(resourcesHolder);
     }
 }
