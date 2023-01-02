@@ -459,7 +459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -59.999973, y: -5.4}
+  m_AnchoredPosition: {x: -59.999973, y: 0}
   m_SizeDelta: {x: 120, y: 27.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296718347
@@ -629,11 +629,11 @@ RectTransform:
   m_Father: {fileID: 1579967363}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 120, y: 25}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &377129911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,11 +726,11 @@ RectTransform:
   m_Father: {fileID: 1018302962}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 120, y: 25}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &400829709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1287,7 @@ MonoBehaviour:
   tileEndHeight: 0.75
   woodPrefab: {fileID: 4393714814841179730, guid: 2a8a4e8562d81a944aa38b20be207616, type: 3}
   stonePrefab: {fileID: 4475510110435885364, guid: 1af25fd55f487244e8e5064e56885048, type: 3}
+  resourcesHolder: {fileID: 1019079337}
   obstacleChance: 0.5
   xBounds: 4
   zBounds: 4
@@ -1302,10 +1303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5479fe867c1b342b7b2678b816bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWood: 0
-  maxStone: 0
-  maxPremiumCurrency: 0
-  maxStandard: 0
+  maxWood: 200
+  maxStone: 200
+  maxPremiumCurrency: 500
+  maxStandard: 500
   debugBool: 0
 --- !u!114 &564313892
 MonoBehaviour:
@@ -1320,21 +1321,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodUI:
-    slider: {fileID: 0}
-    maxUI: {fileID: 0}
-    currentUI: {fileID: 0}
+    slider: {fileID: 1579967364}
+    maxUI: {fileID: 964856597}
+    currentUI: {fileID: 377129912}
   stoneUI:
-    slider: {fileID: 0}
-    maxUI: {fileID: 0}
-    currentUI: {fileID: 0}
+    slider: {fileID: 1018302963}
+    maxUI: {fileID: 986120141}
+    currentUI: {fileID: 400829710}
   standardUI:
-    slider: {fileID: 0}
-    maxUI: {fileID: 0}
-    currentUI: {fileID: 0}
+    slider: {fileID: 630287308}
+    maxUI: {fileID: 889688540}
+    currentUI: {fileID: 1318783874}
   premiumUI:
-    slider: {fileID: 0}
-    maxUI: {fileID: 0}
-    currentUI: {fileID: 0}
+    slider: {fileID: 528246283}
+    maxUI: {fileID: 296718348}
+    currentUI: {fileID: 1872955126}
 --- !u!1 &590596703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1519,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.296
+  m_Value: 0.28
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1668,7 +1669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -59.999973, y: -5.4}
+  m_AnchoredPosition: {x: -59.999973, y: 0}
   m_SizeDelta: {x: 120, y: 27.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889688540
@@ -1763,7 +1764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -59.999973, y: -5.4}
+  m_AnchoredPosition: {x: 109, y: 0}
   m_SizeDelta: {x: 120, y: 27.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964856596
@@ -1858,7 +1859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -59.999973, y: -5.4}
+  m_AnchoredPosition: {x: 109, y: 0}
   m_SizeDelta: {x: 120, y: 27.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986120140
@@ -1955,9 +1956,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -75}
+  m_AnchoredPosition: {x: -273, y: -75}
   m_SizeDelta: {x: 240, y: 50}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1018302963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,7 +2002,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 252000847}
   m_FillRect: {fileID: 252000846}
   m_HandleRect: {fileID: 0}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -2009,6 +2010,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1019079336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019079337}
+  m_Layer: 0
+  m_Name: ResourcesHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019079337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019079336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305107898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,9 +2417,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -15}
+  m_AnchoredPosition: {x: -273, y: -15}
   m_SizeDelta: {x: 240, y: 50}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1579967364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2432,11 +2463,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 111405580}
   m_FillRect: {fileID: 111405579}
   m_HandleRect: {fileID: 0}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.456
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

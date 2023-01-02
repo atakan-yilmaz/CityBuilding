@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public float tileSize = 1f;
     public float tileEndHeight = 1;
 
+    [Space(8)]
+    public TileObject[,] tileGrid = new TileObject[0, 0];
+
     [Header("Resources")]
     [Space(8)]
 
@@ -36,12 +39,20 @@ public class GameManager : MonoBehaviour
 
     public void CreateLevel()
     {
+        List<TileObject> visualGrid = new List<TileObject>();
+
         for (int x = 0; x < levelWidth; x++)
         {
             for (int z = 0; z < levelLength; z++)
             {
+                //DIRECTLY SPAWN A TILE
                 TileObject spawnedTile =  SpawnTile(x * tileSize, z * tileSize);
 
+                //SETS THE tileObject WORLD SPACE DATA
+                spawnedTile.xPos = x;
+                spawnedTile.zPos = z;
+
+                //USING THE BOUNDS PARAMETERS
                 if (x < xBounds || z < zBounds || z >= (levelLength - zBounds) || x >= (levelWidth - xBounds))
                 {
                     //SPAWN THE OBSTACLE IN THERE
@@ -64,8 +75,13 @@ public class GameManager : MonoBehaviour
                         SpawnObstacle(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
                     }
                 }
+
+                //ADDS THE SPAWNED VISUAL tileObject INSIDE THE LIST
+                visualGrid.Add(spawnedTile);
             }
         }
+
+        CreateGrid(visualGrid);
     }
 
     /// <summary>
@@ -102,14 +118,34 @@ public class GameManager : MonoBehaviour
         if (isWood)
         {
             spawnedObstacle = Instantiate(woodPrefab);
+            spawnedObstacle.name = "Wood " + xPos + " - " + zPos;
         }
         else
         {
             spawnedObstacle = Instantiate(stonePrefab);
+            spawnedObstacle.name = "Stone " + xPos + " - " + zPos;
         }
 
         //SETS THE POSITION AND THE PARENT OF THE SPAWNED RESOURCE
         spawnedObstacle.transform.position = new Vector3(xPos, tileEndHeight, zPos);
         spawnedObstacle.transform.SetParent(resourcesHolder);
+    }
+
+    /// <summary>
+    /// CREATE TILE GRID TO ADD BUILDINGS
+    /// </summary>
+    public void CreateGrid(List<TileObject> refVisualGrid)
+    {
+        //SET THE SIZE OF OUR TILE GRID
+        tileGrid = new TileObject[levelWidth, levelLength];
+
+        for (int x = 0; x < levelWidth; x++)
+        {
+            for (int z = 0; z < levelLength; z++)
+            {
+                //CONNECTLY THE tileGrid DIRECTLY TO THE VISUAL GRID
+                tileGrid[x, z] = refVisualGrid.Find(v => v.xPos == x && v.zPos == z);
+            }
+        }
     }
 }
