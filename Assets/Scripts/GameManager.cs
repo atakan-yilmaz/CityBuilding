@@ -65,14 +65,11 @@ public class GameManager : MonoBehaviour
 
                     if (spawnObstacle)
                     {
-                        //HANDLE THE SPAWNING OBSTACLE FUNCTIONALITY
-                        //Debug.Log("Spawned obstacle on " + spawnedTile.gameObject.name);
-
-                        //DEBUG (DELETE LATER)
-                        //spawnedTile.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-
                         spawnedTile.data.SetOccupied(TileManager.ObstacleType.Resource);
-                        SpawnObstacle(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
+
+
+                        ObstacleObject tmpObstacle = SpawnObstacle(spawnedTile.transform.position.x, spawnedTile.transform.position.z);
+                        tmpObstacle.SetTileReference(spawnedTile);
                     }
                 }
 
@@ -108,7 +105,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="xPos">X Position of the obstacle</param>
     /// <param name="zPos">Z Position of the obstacle</param>
-    public void SpawnObstacle(float xPos, float zPos)
+    ObstacleObject SpawnObstacle(float xPos, float zPos)
     {
         bool isWood = Random.value <= 0.5f;
 
@@ -129,6 +126,8 @@ public class GameManager : MonoBehaviour
         //SETS THE POSITION AND THE PARENT OF THE SPAWNED RESOURCE
         spawnedObstacle.transform.position = new Vector3(xPos, tileEndHeight, zPos);
         spawnedObstacle.transform.SetParent(resourcesHolder);
+
+        return spawnedObstacle.GetComponent<ObstacleObject>();
     }
 
     /// <summary>

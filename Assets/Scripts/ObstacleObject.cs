@@ -6,6 +6,7 @@ public class ObstacleObject : MonoBehaviour
 {
     public ObstacleType obstacleType;
     public int ResourceAmount = 10;
+    TileObject refTile;
 
 
     /// <summary>
@@ -32,11 +33,20 @@ public class ObstacleObject : MonoBehaviour
         }
 
         if (usedResource)
+        {
+            refTile.data.CleanTile();
             Destroy(gameObject);
+        }
+            
         else
             Debug.Log("Could not destroy. Because inventory is full");
     }
 
+    public void SetTileReference(TileObject obj)
+    {
+        refTile = obj;
+    }
+    
     public enum ObstacleType
     {
         Stone,
