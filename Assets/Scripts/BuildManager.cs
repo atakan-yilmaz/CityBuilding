@@ -18,6 +18,9 @@ public class BuildManager
     //VISUAL
     public GameObject buildingModel;
 
+    //FLOOR
+    public float yPadding = 0;
+
     //TYPE OF FUNCTIONALITY OF THE BUILDING 
     public ResourceType resourceType = ResourceType.None;
 

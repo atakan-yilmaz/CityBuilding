@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public float tileEndHeight = 1;
 
     [Space(8)]
+
+    //THIS IS THE TRID THAT DIRECTLY STORES ALL OF THE INFORMATION 
     public TileObject[,] tileGrid = new TileObject[0, 0];
 
     [Header("Resources")]
@@ -161,12 +163,27 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="building"></param>
     /// <param name="tile"></param>
-    public void SpawnBuilding(BuildingObject building, TileObject tile)
+    public void SpawnBuilding(BuildingObject building, List<TileObject> tiles)
     {
         GameObject spawnedBuilding = Instantiate(building.gameObject);
+        float sumX = 0;
+        float sumZ = 0;
 
-        Vector3 position = new Vector3(tile.xPos, tileEndHeight, tile.zPos);
+        for (int i = 0; i < tiles.Count; i++)
+        {
+            sumX += tiles[i].xPos;
+            sumZ += tiles[i].zPos;
+
+            tiles[i].data.SetOccupied(TileManager.ObstacleType.Building);
+            Debug.Log("Placed building in " + tiles[i].xPos + " - " + tiles[i].zPos);
+        }
+
+        //SET THE CORRECT POSITION 
+        Vector3 position = new Vector3((sumX / tiles.Count), building.data.yPadding, (sumZ / tiles.Count)); ;
 
         spawnedBuilding.transform.position = position;
+        
+        //OLD POSITION 
+        //Vector3 position = new Vector3(tile.xPos, tileEndHeight, tile.zPos);
     }
 }
