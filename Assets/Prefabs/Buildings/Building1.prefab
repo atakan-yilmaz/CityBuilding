@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6457554414996593915}
   - component: {fileID: 488229186239332982}
+  - component: {fileID: 1855224805593946913}
   m_Layer: 0
   m_Name: Building1
   m_TagString: Untagged
@@ -51,6 +52,22 @@ MonoBehaviour:
     buildingModel: {fileID: 3728588923071317959}
     yPadding: 1
     resourceType: 0
+  resource: 0
+  resourceLimit: 100
+  generationSpeed: 5
+--- !u!65 &1855224805593946913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728588923071317959}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.96605325, y: 0.6721728, z: 0.8070499}
+  m_Center: {x: 0.079643905, y: -0.16391361, z: 0.0011018962}
 --- !u!1001 &7956664962507614619
 PrefabInstance:
   m_ObjectHideFlags: 0

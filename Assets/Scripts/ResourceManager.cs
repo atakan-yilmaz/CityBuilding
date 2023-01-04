@@ -66,6 +66,13 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    public void IncreaseMaxWood(int amount)
+    {
+        maxWood = amount;
+
+        UIManager.Instance.UpdateWoodUI(wood, maxWood);
+    }
+
     /// <summary>
     /// ADDS MORE STONE TO THE INVENTORY
     /// </summary>
@@ -85,6 +92,13 @@ public class ResourceManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void IncreaseMaxStone(int amount)
+    {
+        maxStone = amount;
+
+        UIManager.Instance.UpdateStoneUI(stone, maxStone);
     }
 
     /// <summary>
@@ -108,6 +122,13 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
+    //public void IncreaseMaxPremium(int amount)
+    //{
+    //    maxPremiumCurrency = amount;
+
+    //    UIManager.Instance.UpdatePremiumUI(premium, maxPremiumCurrency);
+    //}
+
     /// <summary>
     /// ADDS MORE STANDARD TO THE INVENTORY
     /// </summary>
@@ -128,5 +149,12 @@ public class ResourceManager : MonoBehaviour
             return false;
         }
     }
+
+    //public void IncreaseMaxStandard(int amount)
+    //{
+    //    maxStandard = amount;
+
+    //    UIManager.Instance.UpdateStandardUI(standard, maxStandard);
+    //}
     #endregion
 }

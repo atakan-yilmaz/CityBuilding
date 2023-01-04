@@ -21,6 +21,8 @@ public class BuildManager
     //FLOOR
     public float yPadding = 0;
 
+    public StorageType storageType = StorageType.None;
+
     //TYPE OF FUNCTIONALITY OF THE BUILDING 
     public ResourceType resourceType = ResourceType.None;
 
@@ -28,6 +30,14 @@ public class BuildManager
     {
         None,
         Standard,
-        Premium
+        Premium,
+        Storage
+    }
+
+    public enum StorageType
+    {
+        None,
+        Wood,
+        Stone
     }
 }

@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
             sumZ += tiles[i].zPos;
 
             tiles[i].data.SetOccupied(TileManager.ObstacleType.Building);
-            Debug.Log("Placed building in " + tiles[i].xPos + " - " + tiles[i].zPos);
+            //Debug.Log("Placed building in " + tiles[i].xPos + " - " + tiles[i].zPos);
         }
 
         //SET THE CORRECT POSITION 
