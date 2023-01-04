@@ -15,6 +15,9 @@ public class BuildManager
     //LENGTH Z AXIS THAT WILL BE USED INSIDE THE GRID
     public int length = 0;
 
+    //VISUAL
+    public GameObject buildingModel;
+
     //TYPE OF FUNCTIONALITY OF THE BUILDING 
     public ResourceType resourceType = ResourceType.None;
 

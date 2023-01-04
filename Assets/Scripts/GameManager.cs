@@ -31,6 +31,14 @@ public class GameManager : MonoBehaviour
     public int xBounds = 3;
     public int zBounds = 3;
 
+    public BuildingObject buildingToPlace;
+
+    public static GameManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -146,5 +154,19 @@ public class GameManager : MonoBehaviour
                 tileGrid[x, z] = refVisualGrid.Find(v => v.xPos == x && v.zPos == z);
             }
         }
+    }
+
+    /// <summary>
+    /// HANDLES THE PLACING SYSTEM OF THE BUILDING
+    /// </summary>
+    /// <param name="building"></param>
+    /// <param name="tile"></param>
+    public void SpawnBuilding(BuildingObject building, TileObject tile)
+    {
+        GameObject spawnedBuilding = Instantiate(building.gameObject);
+
+        Vector3 position = new Vector3(tile.xPos, tileEndHeight, tile.zPos);
+
+        spawnedBuilding.transform.position = position;
     }
 }
