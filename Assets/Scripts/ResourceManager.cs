@@ -68,7 +68,7 @@ public class ResourceManager : MonoBehaviour
 
     public void IncreaseMaxWood(int amount)
     {
-        maxWood = amount;
+        maxWood += amount;
 
         UIManager.Instance.UpdateWoodUI(wood, maxWood);
     }
@@ -96,7 +96,7 @@ public class ResourceManager : MonoBehaviour
 
     public void IncreaseMaxStone(int amount)
     {
-        maxStone = amount;
+        maxStone += amount;
 
         UIManager.Instance.UpdateStoneUI(stone, maxStone);
     }
