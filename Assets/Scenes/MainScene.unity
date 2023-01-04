@@ -1249,11 +1249,13 @@ MonoBehaviour:
     width: 0
     length: 0
     buildingModel: {fileID: 0}
+    yPadding: 0
     resourceType: 0
   - buildingID: 2
     width: 0
     length: 0
     buildingModel: {fileID: 0}
+    yPadding: 0
     resourceType: 0
 --- !u!4 &564313889
 Transform:
@@ -1293,7 +1295,7 @@ MonoBehaviour:
   obstacleChance: 0.5
   xBounds: 4
   zBounds: 4
-  buildingToPlace: {fileID: -7584542018884090095, guid: 87e93496e3164764d9c0a452fd12db17, type: 3}
+  buildingToPlace: {fileID: 5198961328930160296, guid: 1fc6d3e23a7f5e642a48be5867cfd6a1, type: 3}
 --- !u!114 &564313891
 MonoBehaviour:
   m_ObjectHideFlags: 0
