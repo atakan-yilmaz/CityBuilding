@@ -45,6 +45,7 @@ public class ResourceManager : MonoBehaviour
     }
 
     #region Resources
+
     /// <summary>
     /// ADDS MORE WOOD TO THE INVENTORY
     /// </summary>
@@ -100,7 +101,7 @@ public class ResourceManager : MonoBehaviour
 
         UIManager.Instance.UpdateStoneUI(stone, maxStone);
     }
-
+    
     /// <summary>
     /// ADDS MORE PREMIUM TO THE INVENTORY
     /// </summary>
@@ -121,14 +122,7 @@ public class ResourceManager : MonoBehaviour
             return false;
         }
     }
-
-    //public void IncreaseMaxPremium(int amount)
-    //{
-    //    maxPremiumCurrency = amount;
-
-    //    UIManager.Instance.UpdatePremiumUI(premium, maxPremiumCurrency);
-    //}
-
+    
     /// <summary>
     /// ADDS MORE STANDARD TO THE INVENTORY
     /// </summary>
@@ -149,12 +143,5 @@ public class ResourceManager : MonoBehaviour
             return false;
         }
     }
-
-    //public void IncreaseMaxStandard(int amount)
-    //{
-    //    maxStandard = amount;
-
-    //    UIManager.Instance.UpdateStandardUI(standard, maxStandard);
-    //}
     #endregion
 }

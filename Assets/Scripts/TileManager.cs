@@ -7,7 +7,7 @@ using UnityEngine;
 public class TileManager
 {
     //BUILDING REFERENCE THAT EACH TILE WILL HAVE FOR EACH BUILDING
-    public BuildManager buildingRef;
+    public BuildingObject buildingRef;
 
     public ObstacleType obstacleType;
 
@@ -27,7 +27,7 @@ public class TileManager
         obstacleType = t;
     }
 
-    public void SetOccupied(ObstacleType t, BuildManager bM)
+    public void SetOccupied(ObstacleType t, BuildingObject bM)
     {
         obstacleType = t;
         buildingRef = bM;

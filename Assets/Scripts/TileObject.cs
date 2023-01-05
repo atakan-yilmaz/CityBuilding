@@ -27,25 +27,33 @@ public class TileObject : MonoBehaviour
                 bool canPlaceBuildingHere = true;
 
                 //CHECK ADJACENT TILE
-                for (int x = xPos; x < xPos + GameManager.Instance.buildingToPlace.data.width; x++)
-                {
-                    if (canPlaceBuildingHere)
-                    {
-                        for (int z = zPos; z < zPos + GameManager.Instance.buildingToPlace.data.length; z++)
-                        {
-                            iteratedTiles.Add(GameManager.Instance.tileGrid[x, z]);
 
-                            if (GameManager.Instance.tileGrid[x, z].data.isOccupied)
+                try
+                {
+                    for (int x = xPos; x < xPos + GameManager.Instance.buildingToPlace.data.width; x++)
+                    {
+                        if (canPlaceBuildingHere)
+                        {
+                            for (int z = zPos; z < zPos + GameManager.Instance.buildingToPlace.data.length; z++)
                             {
-                                canPlaceBuildingHere = false;
-                                break;
+                                iteratedTiles.Add(GameManager.Instance.tileGrid[x, z]);
+
+                                if (GameManager.Instance.tileGrid[x, z].data.isOccupied)
+                                {
+                                    canPlaceBuildingHere = false;
+                                    break;
+                                }
                             }
                         }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
-                    {
-                        break;
-                    }
+                }
+                catch (System.IndexOutOfRangeException)
+                {
+                    return;
                 }
 
                 if (canPlaceBuildingHere)

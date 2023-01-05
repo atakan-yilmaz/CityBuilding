@@ -240,6 +240,7 @@ MonoBehaviour:
     yPadding: 1
     storageType: 0
     resourceType: 1
+    refOfBuilding: {fileID: -7584542018884090095}
   resource: 0
   resourceLimit: 100
   generationSpeed: 5

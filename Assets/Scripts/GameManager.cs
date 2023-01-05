@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
             sumX += tiles[i].xPos;
             sumZ += tiles[i].zPos;
 
-            tiles[i].data.SetOccupied(TileManager.ObstacleType.Building);
+            tiles[i].data.SetOccupied(TileManager.ObstacleType.Building, spawnedBuilding.GetComponent<BuildingObject>());
             //Debug.Log("Placed building in " + tiles[i].xPos + " - " + tiles[i].zPos);
         }
 
@@ -185,5 +185,16 @@ public class GameManager : MonoBehaviour
         
         //OLD POSITION 
         //Vector3 position = new Vector3(tile.xPos, tileEndHeight, tile.zPos);
+    }
+
+    public void SelectBuilding(int id)
+    {
+        for (int i = 0; i < BuildingDatabese.Instance.buildingDatabese.Count; i++)
+        {
+            if (BuildingDatabese.Instance.buildingDatabese[i].buildingID == id)
+            {
+                buildingToPlace = BuildingDatabese.Instance.buildingDatabese[i].refOfBuilding;
+            }
+        }
     }
 }
